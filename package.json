@@ -1,0 +1,18 @@
+{
+  "name": "sample-grenache-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bfx-facs-auth-google": "git+https://github.com/bitfinexcom/bfx-facs-auth-google.git",
+    "bfx-svc-test-helper": "git+https://github.com/bitfinexcom/bfx-svc-test-helper.git",
+    "bfx-wrk-api": "git+https://github.com/bitfinexcom/bfx-wrk-api.git",
+    "grenache-grape": "^0.9.10"
+  }
+}
