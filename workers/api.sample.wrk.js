@@ -5,8 +5,13 @@ const { WrkApi } = require('bfx-wrk-api')
 class Worker extends WrkApi {
   constructor (conf, ctx) {
     super(conf, ctx)
+    this.loadWorkersConfig()
     this.init()
     this.start()
+  }
+
+  loadWorkersConfig () {
+    this.loadConf('sample', 'sample')
   }
 
   getPluginCtx (type) {
