@@ -9,6 +9,18 @@ class Worker extends WrkApi {
     this.start()
   }
 
+  getPluginCtx (type) {
+    const ctx = super.getPluginCtx(type)
+
+    switch (type) {
+      case 'api_bfx':
+        ctx.auth_google = this.authGoogle_a0
+        break
+    }
+
+    return ctx
+  }
+
   setupFacs () {
     return [
       ['fac', 'bfx-facs-auth-google', 'a0', 'a0']
