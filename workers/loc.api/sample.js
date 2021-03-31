@@ -10,6 +10,17 @@ class Sample extends Api {
       cb(e)
     }
   }
+
+  async getEmail (space, token, cb) {
+    try {
+      const authGoogle = this.ctx.auth_google
+      const res = await authGoogle.googleEmailFromToken(token)
+      cb(null, res)
+    } catch (err) {
+      console.error(err)
+      cb(err)
+    }
+  }
 }
 
 module.exports = Sample
