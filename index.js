@@ -20,9 +20,7 @@ async function start () {
   const serviceRoot = __dirname
   const sampleWorker = createWorker({
     env: 'development',
-    wtype: 'wrk-sample',
-    NODE_APP_INSTANCE: 'test',
-    logs: { logs: true },
+    wtype: 'wrk-sample-api',
     apiPort: 1338,
     serviceRoot
   }, grapes)
@@ -46,4 +44,22 @@ function getRequest (wrk) {
   }
 }
 
-start()
+async function test () {
+  const { request } = await start()
+  const token = ['ADM-1235', '']
+  const query = {
+    action: 'sampleEndpoint',
+    args: [token]
+  }
+  const data = await request(query)
+  console.log('data should be true: ', data)
+
+  const token2 = ['should be false']
+  const query2 = {
+    action: 'sampleEndpoint',
+    args: [token2]
+  }
+  const data2 = await request(query2)
+  console.log('data2 should be false: ', data2)
+}
+test()
