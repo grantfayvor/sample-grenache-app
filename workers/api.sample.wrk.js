@@ -28,7 +28,7 @@ class Worker extends WrkApi {
 
   setupFacs () {
     return [
-      ['fac', 'bfx-facs-auth-google', 'a0', 'a0']
+      ['fac', 'bfx-facs-auth-google', 'a0', 'a0', {}]
     ]
   }
 
