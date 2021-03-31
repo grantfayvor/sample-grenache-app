@@ -4,4 +4,4 @@ class Sample extends Api {
 
 }
 
-module.exports = Sample;
+module.exports = Sample
