@@ -1,13 +1,12 @@
 'use strict'
 
-const path = require('path')
 const {
   grapes: createGrapes,
   worker: createWorker,
-  client: createClient,
+  client: createClient
 } = require('bfx-svc-test-helper')
 
-async function start() {
+async function start () {
   console.log('Wait till ready')
 
   const grapes = createGrapes()
@@ -16,7 +15,7 @@ async function start() {
 
   await grapes.start()
 
-  console.log('started grapes');
+  console.log('started grapes')
 
   const serviceRoot = __dirname
   const sampleWorker = createWorker({
@@ -29,9 +28,9 @@ async function start() {
   }, grapes)
   await sampleWorker.start()
 
-  const request = getRequest(sampleWorker); // make requests to the worker with this object
-
+  const request = getRequest(sampleWorker) // make requests to the worker with this object
   console.log('Ready!!')
+  return { request }
 }
 
 function getRequest (wrk) {
