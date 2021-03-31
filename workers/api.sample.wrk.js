@@ -15,16 +15,8 @@ class Worker extends WrkApi {
   }
 
   setupFacs () {
-    const authOpts = {
-      conf: {
-        google: {
-          clientId: 'test-client-id',
-          clientSecret: 'test-secret'
-        }
-      }
-    }
     return [
-      ['fac', 'bfx-facs-auth-google', 'a0', 'a0', authOpts]
+      ['fac', 'bfx-facs-auth-google', 'a0', 'a0']
     ]
   }
 
